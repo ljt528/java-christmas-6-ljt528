@@ -1,7 +1,13 @@
 package christmas;
 
+import clipboard.OrderMenu;
+import ui.input.DateInput;
+import ui.input.MenuInput;
+
 public class Application {
     public static void main(String[] args) {
-        // TODO: 프로그램 구현
+        DateInput.customerInputDate();
+        MenuInput.customerInputMenu();
+        OrderMenu.organizeorder();
     }
 }

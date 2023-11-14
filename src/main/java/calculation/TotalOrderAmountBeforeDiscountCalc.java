@@ -16,9 +16,9 @@ public class TotalOrderAmountBeforeDiscountCalc {
         for (int m = 0; m < orderLength; m++) {
             if (menunames.get(m).equals(MUSHROOM_SOUP.menu)) {
                 appetizertotalprice += (int) menucounts.get(m) * MUSHROOM_SOUP.price;
-            } else if (menunames.contains(TAPAS.menu)) {
+            } else if (menunames.get(m).equals(TAPAS.menu)) {
                 appetizertotalprice += (int) menucounts.get(m) * TAPAS.price;
-            } else if (menunames.contains(CAESAR_SALAD.menu)) {
+            } else if (menunames.get(m).equals(CAESAR_SALAD.menu)) {
                 appetizertotalprice += (int) menucounts.get(m) * CAESAR_SALAD.price;
             }
         }
@@ -30,11 +30,11 @@ public class TotalOrderAmountBeforeDiscountCalc {
         for (int m = 0; m < orderLength; m++) {
             if (menunames.get(m).equals(T_BONE_STEAK.menu)) {
                 maindishtotalprice += (int) menucounts.get(m) * T_BONE_STEAK.price;
-            } else if (menunames.contains(BARBECUE_RIBS.menu)) {
+            } else if (menunames.get(m).equals(BARBECUE_RIBS.menu)) {
                 maindishtotalprice += (int) menucounts.get(m) * BARBECUE_RIBS.price;
-            } else if (menunames.contains(SEAFOOD_PASTA.menu)) {
+            } else if (menunames.get(m).equals(SEAFOOD_PASTA.menu)) {
                 maindishtotalprice += (int) menucounts.get(m) * SEAFOOD_PASTA.price;
-            } else if (menunames.contains(CHRISTMAS_PASTA.menu)) {
+            } else if (menunames.get(m).equals(CHRISTMAS_PASTA.menu)) {
                 maindishtotalprice += (int) menucounts.get(m) * CHRISTMAS_PASTA.price;
             }
         }
@@ -46,7 +46,7 @@ public class TotalOrderAmountBeforeDiscountCalc {
         for (int m = 0; m < orderLength; m++) {
             if (menunames.get(m).equals(CHOCOCAKE.menu)) {
                 desserttotalprice += (int) menucounts.get(m) * CHOCOCAKE.price;
-            } else if (menunames.contains(ICECREAM.menu)) {
+            } else if (menunames.get(m).equals(ICECREAM.menu)) {
                 desserttotalprice += (int) menucounts.get(m) * ICECREAM.price;
             }
         }
@@ -58,15 +58,15 @@ public class TotalOrderAmountBeforeDiscountCalc {
         for (int m = 0; m < orderLength; m++) {
             if (menunames.get(m).equals(ZERO_COKE.menu)) {
                 drinktotalprice += (int) menucounts.get(m) * ZERO_COKE.price;
-            } else if (menunames.contains(RED_WINE.menu)) {
+            } else if (menunames.get(m).equals(RED_WINE.menu)) {
                 drinktotalprice += (int) menucounts.get(m) * RED_WINE.price;
-            } else if (menunames.contains(CHAMPAGNE.menu)) {
+            } else if (menunames.get(m).equals(CHAMPAGNE.menu)) {
                 drinktotalprice += (int) menucounts.get(m) * CHAMPAGNE.price;
             }
         }
         return drinktotalprice;
     }
-    public static void totalpricebeforediscount(List<String> menunames, List<Integer> menucounts) {
+    public static int totalpricebeforediscount(List<String> menunames, List<Integer> menucounts) {
         // 각 카테고리 메서드를 호출하여 총 가격 계산
         int appetizerTotal = appetizertotal(menunames, menucounts);
         int mainDishTotal = maindishtotal(menunames, menucounts);
@@ -75,6 +75,6 @@ public class TotalOrderAmountBeforeDiscountCalc {
 
         // 전체 총 가격 계산
         int overallTotal = appetizerTotal + mainDishTotal + dessertTotal + drinkTotal;
-        // return overallTotal;
+        return overallTotal;
     }
 }

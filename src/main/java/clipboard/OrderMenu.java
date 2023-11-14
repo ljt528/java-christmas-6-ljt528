@@ -32,19 +32,21 @@ public class OrderMenu {
             menucount.add(j, Integer.valueOf(order[j].substring(order[j].lastIndexOf("-") + 1)));
         }
     }
+    // 메뉴 확인
     public static List<String> getMenuNames() {
-        List<String> menuname = new ArrayList<>();
+        List<String> menunames = new ArrayList<>();
         for (int i = 0; i < currentorder.length; i++) {
-            menuname.add(i, (currentorder[i].substring(0, currentorder[i].indexOf("-"))));
+            menunames.add(i, (currentorder[i].substring(0, currentorder[i].indexOf("-"))));
         }
-        return menuname;
+        return menunames;
     }
 
+    // 갯수 확인
     public static List<Integer> getMenuCounts() {
-        List<Integer> menucount = new ArrayList<>();
+        List<Integer> menucounts = new ArrayList<>();
         for (int j = 0; j < currentorder.length; j++) {
-            menucount.add(j, Integer.valueOf(currentorder[j].substring(currentorder[j].lastIndexOf("-") + 1)));
+            menucounts.add(j, Integer.valueOf(currentorder[j].substring(currentorder[j].lastIndexOf("-") + 1)));
         }
-        return menucount;
+        return menucounts;
     }
 }

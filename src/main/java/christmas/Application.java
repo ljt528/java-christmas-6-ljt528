@@ -2,7 +2,10 @@ package christmas;
 
 import clipboard.OrderMenu;
 import ui.input.DateInput;
+import ui.output.BenefitDetailOutput;
+import ui.output.GiftMenuOutput;
 import ui.output.OrderMenuOutput;
+import ui.output.TotalOrderAmountBeforeDiscountOutput;
 
 import java.util.List;
 
@@ -13,5 +16,8 @@ public class Application {
         List<String> menuNames = OrderMenu.getMenuNames();
         List<Integer> menuCounts = OrderMenu.getMenuCounts();
         OrderMenuOutput.printMenu(menuNames, menuCounts);
+        TotalOrderAmountBeforeDiscountOutput.printTotalOrderAmountBeforeDiscount(menuNames, menuCounts);
+        GiftMenuOutput.printgiftmenu(menuNames, menuCounts);
+        BenefitDetailOutput.printbenefitdetails();
     }
 }

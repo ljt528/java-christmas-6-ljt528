@@ -1,13 +1,16 @@
 package ui.output;
 
-import event.GiftEvent;
+import clipboard.Date;
+
+import java.util.List;
 
 public class BenefitDetailOutput {
-    public static void printbenefitdetails() {
+    public static void printbenefitdetails(List menunames) {
+
         System.out.println("<혜택 내역>");
-//        System.out.println("크리스마스 디데이 할인: " + -1,200 + "원");
-//        System.out.println("평일 할인: " + -4,046 + "원");
-//        System.out.println("특별 할인: " + -1,000 + "원");
-        GiftEvent.gifteventdetail();
+        Date.CDD();
+        Date.sortday(menunames);
+        Date.SD();
+        Date.GE();
     }
 }
